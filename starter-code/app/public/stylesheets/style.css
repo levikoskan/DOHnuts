@@ -1,17 +1,37 @@
-@import url(http://fonts.googleapis.com/css?family=Sniglet:800);
+@import url(https://fonts.googleapis.com/css?family=Sniglet:400,800);
 
+html {
+  background: url("../images/donutbg.JPG") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity:.9;
+
+}
+
+.title{
+  text-align:center;
+}
+
+#new-doughnut{
+  text-align: center;
+}
 body {
   font-family: Verdana, Tahoma, Geneva, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  max-width: 700px;
+  /*line-height: 1.5;*/
+  /*max-width: 700px;*/
   margin: 0 auto;
-  text-align: center;
-  background: #81e7db;
+  /*text-align: center;*/
+  /*background: #81e7db;*/
+  opacity:1;
+
 }
 
 h1 {
   font-family: 'Sniglet', Helvetica, cursive;
+  font-weight:800;
   letter-spacing: -2px;
   font-size: 4.2rem;
   text-shadow: 3px 0px 2px rgba(0,0,125,0.24), 0px 2px 5px rgba(255,255,255,0.7);
@@ -52,15 +72,28 @@ form input[type=submit]:hover{
 }
 
 ul {
-  text-align: left;
-  max-width: 300px;
+  /*text-align: left;*/
+  max-width: 500px;
   margin: 2rem auto;
-  font-size: 16px;
+  font-size: 20px;
   list-style-type: none;
+  font-family: 'Sniglet', Helvetica, cursive;
+  font-weight: 400;
+  text-align:center;
 }
 
 #donutModal{
   height:400px;
+
+}
+
+.modal-content{
+  background: rgba(63, 127, 191,  1);
+  opacity:1;
+}
+
+.modal-title{
+  font-size:30px;
 }
 
 img{
@@ -75,3 +108,21 @@ img{
   text-align: left;
   float: left;
 }
+
+#levipic{
+  height:500px;
+  width:300px;
+  position:relative;
+  margin-right: 200px;
+  margin-top:-230px;
+
+}
+
+#metelpic{
+  height:500px;
+  width:300px;
+  position:relative;
+  margin-left: 605px;
+  margin-top:-230px;
+}
+
