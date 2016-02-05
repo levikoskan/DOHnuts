@@ -1,6 +1,11 @@
 // jQuery Document Ready
 $(function() {
   var donutApi = "http://api.doughnuts.ga/doughnuts";
+  var giphyApiRoot = 'https://api.giphy.com/';
+  var giphyapiKey = 'dc6zaTOxFJmzC'
+  var tempId;
+
+
   var jqXHR = $.ajax({
     method: "GET",
     url: donutApi,
@@ -9,16 +14,45 @@ $(function() {
   })
   .done(function(data){
     for (var i = 0; i < data.length; i++){
-      $('#doughnuts').append('<li><a href="#" data-toggle="modal" data-target="#' + data[i].id + '">' + data[i].flavor + " " + data[i].style + '</li>');
-      $('#doughnuts').append('<div id="' + data[i].id + '" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">'+ data[i].id + '</h4></div><div class="modal-body"><p>Some text in the modal.</p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>');    }
-    console.log(data);
-  })
-  .fail(function(jqXHR, textStatus) {
-     console.log("Request failed: " + textStatus);
-  })
-  .always(function() {
-     console.log('Request completed');
-       //hideLoadingIndicator();
+      $('#doughnuts').append('<li><a href="#" data-toggle="modal" id="donutModal" data-target="#' + data[i].id + '">' + data[i].flavor + " " + data[i].style + '</li>');
+      $('#doughnuts').append('<div id="' + data[i].id + '" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">'+ data[i].flavor + " " + data[i].style + '</h4></div><div class="modal-body"><p>Some text in the modal.</p></div><div class="modal-footer"><button type="button" class="btn btn-default delete" data-dismiss="modal">Delete</button><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>');
+    }
+
+    $('li').on('click', function(){
+      console.log("HI");
+      $.ajax({
+         method: "GET",
+         url: giphyApiRoot + 'v1/gifs/random',
+         data: {
+         api_key: giphyapiKey,
+         tag: 'doughnuts'
+           }
+         })
+         .done(function(giphy){
+           $('.modal-body').empty();
+           console.log(giphy);
+           giphyURL = giphy.data.image_original_url;
+           $('.modal-body').append('<img src =' + giphyURL + '>');
+
+
+           $('.delete').click(function() {
+
+                var donutId = $(this);
+                console.log('Donut Id to delete: ', donutId);
+
+                deleteDonut(donutId);
+              });
+         })
+         .fail(function() {
+           console.log("error");
+         })
+         .always(function() {
+           console.log("complete");
+         });
+
+      })
+
+
   });
 
 
@@ -50,12 +84,24 @@ $(function() {
 
    });
 
+  var deleteDonut = function(donutId) {
+       var jqXHR = $.ajax({
+         method: "DELETE",
+         url: donutApi,
+         data: {},
+         dataType: "json"
+       })
+       .done(function() {
+         console.log('Deleted Donut data');
 
-
-
-
-
-
+       })
+       .fail(function(jqXHR, textStatus) {
+         console.log("Request failed: " + textStatus);
+       })
+       .always(function() {
+         console.log('Request completed');
+       });
+   };
 
 
 });
