@@ -21,4 +21,38 @@ $(function() {
        //hideLoadingIndicator();
   });
 
+
+  $('#new-doughnut').on('submit', function() {
+   var flavor = $('#doughnut-flavor').val();
+   var style = $('#doughnut-style').val();
+
+   var jqxhr = $.ajax({
+         url: donutApi,
+         method: "POST",
+         data: {
+           flavor: flavor,
+           style: style
+         },
+         dataType: "json"
+     })
+     .done(function(data) {
+       $('#doughnuts').prepend("<li>" + data.flavor + " " + data.style + "</li>");
+
+     })
+     .fail(function(jqXHR, textStatus) {
+       console.log("Request failed: " + textStatus);
+     })
+     .always(function() {
+       console.log('Request completed');
+     });
+
+     return false;
+   });
+
+
+
+
+
+
+
 });
