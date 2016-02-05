@@ -1,0 +1,4 @@
+// jQuery Document Ready
+$(function() {
+  
+});
