@@ -104,6 +104,8 @@ var loadDonuts = function(){
        .done(function() {
          console.log('Deleted Donut data');
 
+         $('.nothing').html('<audio autoplay><source src="../images/doh.mp3" type="audio/mp3"></audio>');
+
          // loadDonuts();
        })
        .fail(function(jqXHR, textStatus) {
