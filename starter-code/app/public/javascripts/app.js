@@ -76,7 +76,7 @@ var loadDonuts = function(){
      })
      .done(function(data) {
        $('#doughnuts').prepend("<li>" + data.flavor + " " + data.style + "</li>");
-
+       // loadDonuts();
      })
      .fail(function(jqXHR, textStatus) {
        console.log("Request failed: " + textStatus);
