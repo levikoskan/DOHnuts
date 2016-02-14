@@ -135,3 +135,9 @@ img{
 background-color:#3b5998;
 margin-top:-20px;
 }
+
+.cat{
+  width:100px;
+  height:100px;
+  position:absolute;
+}
