@@ -7,55 +7,35 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <link rel="stylesheet" href="stylesheets/style.css">
-
-
     </head>
     <body>
         <img class="cat" src="http://vector.me/files/images/2/8/288246/black_cat">
         <div id="fb-root"></div>
-
-      <h1 class="title">DOHnut Shop</h1>
-
-      <form id="new-doughnut">
-        <input type="text" name='doughnut[flavor]' id="doughnut-flavor" placeholder="What type of doughnut?" value="Chocolate">
-        <select name="doughnut[style]" id="doughnut-style">
+        <h1 class="title">DOHnut Shop</h1>
+        <form id="new-doughnut">
+          <input type="text" name='doughnut[flavor]' id="doughnut-flavor" placeholder="What type of doughnut?" value="Chocolate">
+          <select name="doughnut[style]" id="doughnut-style">
             <option value="Old Fashioned">Old Fashioned</option>
             <option value="Cake">Cake</option>
             <option value="French Cruller">French Cruller</option>
             <option value="Yeast">Yeast</option>
-        </select>
-        <input type="submit" value='Save My Doughnut'>
-
-        <ul id="doughnuts">
-
-        </ul>
-
-
-      </form>
-
-      <img id="levipic" src="/images/levi.png">
-      <img id="metelpic" src="/images/metel.png">
-
-      <div class="nothing"></div>
-
-      <div class ="fb">
-        <button id="fbbtn" class="btn btn-primary btn-lg" data-size="xlarge" type="button">Log the F out</button>
-        <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
-        <div id="status">
+          </select>
+          <input type="submit" value='Save My Doughnut'>
+          <ul id="doughnuts"></ul>
+        </form>
+        <img id="levipic" src="/images/levi.png">
+        <img id="metelpic" src="/images/metel.png">
+        <div class="nothing"></div>
+        <div class ="fb">
+          <button id="fbbtn" class="btn btn-primary btn-lg" data-size="xlarge" type="button">Log the F out</button>
+          <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+          <div id="status">
         </div>
       </div>
 
-
-
-
-
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-      <script src="javascripts/app.js"></script>
-      <script src="javascripts/facebook.js"></script>
-    </body>
-
-
+     <script src="javascripts/app.js"></script>
+     <script src="javascripts/facebook.js"></script>
+  </body>
 </html>
