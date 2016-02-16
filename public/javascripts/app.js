@@ -1,6 +1,6 @@
 // jQuery Document Ready
 $(function() {
-  var donutApi = "http://api.doughnuts.ga/doughnuts/";
+  var donutApi = "https://api.doughnuts.ga/doughnuts/";
   var giphyApiRoot = 'https://api.giphy.com/';
   var giphyapiKey = 'dc6zaTOxFJmzC'
   var tempId;
