@@ -112,18 +112,18 @@ img{
 #levipic{
   height:500px;
   width:300px;
-  position:relative;
+  position:absolute;
   margin-right: 200px;
-  margin-top:-230px;
+  margin-top:150px;
 
 }
 
 #metelpic{
   height:500px;
   width:300px;
-  position:relative;
-  margin-left: 605px;
-  margin-top:-230px;
+  position:absolute;
+  margin-left: 1125px;
+  margin-top:150px;
 }
 
 .fb{
